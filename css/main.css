@@ -1,0 +1,9 @@
+.form-wrapper, .functions-wrapper {
+  width: 300px;
+}
+
+
+input, .form-control {
+  margin: -1px -1px;
+  border-radius: 0px;
+}

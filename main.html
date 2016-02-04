@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>статистический калькулятор</title>
+  <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+  <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap-theme.min.css" media="screen" title="no title" charset="utf-8">
+  <link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+  <script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/main.js">
+  </script>
+
+</script>
+</head>
+<body onload="init()">
+  <h1>Статистический калькулятор</h1>
+  <div class="form-group form-wrapper">
+    <input class="form-control" id="expr" value="" placeholder="Целое или вещественное число" onfocus="$('#expr').select();">
+    <input class="form-control btn btn-success" id="add" value="Добавить значение"></input>
+    <p></p>
+    <label> Автоматически выделять </label>
+    <input type="checkbox" class="form-control" id="select_auto"></input>
+    <input class="form-control btn btn-default" id="average" value="Среднее">
+    <input class="form-control btn btn-default" id="max" value="Максимальное">
+    <input class="form-control btn btn-default" id="min" value="Минимальное">
+    <input class="form-control btn btn-default" id="disp" value="Дисперсия">
+    <input class="form-control btn btn-default" id="max_neg" value="Наибольшее отрицательное">
+
+  </div>
+
+  <div class="form-group functions functions-wrapper">
+    <input class="form-control btn btn-danger" id="delete" value="Удалить">
+  </div>
+</body>
+</html>
