@@ -1,7 +1,7 @@
 function init () {
 	// Добавление нового числа
 	$('#add').on('click', function () {
-		re = /^[\-]{0,1}[\d]+$|^[\-]{0,1}[\d]+\.[\d]+$/;
+		re = /^[\d]+$|^[\d]+\.[\d]+$/;
 
 		if ($('#expr').val().match(re)) {
 			if ($('#expr').val().match(re)[0]) {
@@ -34,6 +34,7 @@ function init () {
 		min = parseFloat($('.selected').first().text());
 
 		$('.selected').each(function () {
+      
 			if ($(this).text() <= min) {
 				min = parseFloat($(this).text());
 			}
@@ -69,7 +70,6 @@ function init () {
 	});
 
 
-
 	$('#disp').on('click', function () {
 		sum = 0;
 
@@ -87,37 +87,4 @@ function init () {
 
 		$('#expr').val(sum2 / $('.selected').length);
 	});
-
-	$('#max_neg').on('click', function () {
-		neg_finded = false;
-		max_neg = 1;
-
-
-		$('.selected').each(function () {
-			if ($(this).text() < 0.0) {
-				neg_finded = true;
-				max_neg = parseFloat($(this).text());
-				return;
-			}
-
-		});
-
-		if(!neg_finded) {
-			$('#expr').val('Не найдено отрицательное число');
-			return;
-		}
-		else {
-			$('.selected').each(function () {
-				if ($(this).text() < 0.0 && max_neg < $(this).text()) {
-					max_neg = parseFloat($(this).text());
-				}
-
-			});
-		}
-
-		$('#expr').val(max_neg);
-
-	});
-
-
 }
