@@ -69,6 +69,7 @@ function init () {
 		$('#expr').val(max);
 	});
 
+<<<<<<< HEAD
 
 	$('#disp').on('click', function () {
 		sum = 0;
@@ -87,4 +88,37 @@ function init () {
 
 		$('#expr').val(sum2 / $('.selected').length);
 	});
+=======
+	$('#max_neg').on('click', function () {
+		neg_finded = false;
+		max_neg = 1;
+
+
+		$('.selected').each(function () {
+			if ($(this).text() < 0.0) {
+				neg_finded = true;
+				max_neg = parseFloat($(this).text());
+				return;
+			}
+
+		});
+
+		if(!neg_finded) {
+			$('#expr').val('Не найдено отрицательное число');
+			return;
+		}
+		else {
+			$('.selected').each(function () {
+				if ($(this).text() < 0.0 && max_neg < $(this).text()) {
+					max_neg = parseFloat($(this).text());
+				}
+
+			});
+		}
+
+		$('#expr').val(max_neg);
+
+	});
+
+>>>>>>> e1937909f236d32ae2ca5e74e0be4eb76da389e5
 }
