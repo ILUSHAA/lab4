@@ -68,26 +68,6 @@ function init () {
 		$('#expr').val(max);
 	});
 
-
-
-	$('#disp').on('click', function () {
-		sum = 0;
-
-		$('.selected').each(function () {
-			sum += parseFloat($(this).text());
-		});
-
-		ave = sum / $('.selected').length;
-
-		sum2 = 0
-
-		$('.selected').each(function () {
-			sum2 += Math.pow(parseFloat($(this).text()) - ave, 2);
-		});
-
-		$('#expr').val(sum2 / $('.selected').length);
-	});
-
 	$('#max_neg').on('click', function () {
 		neg_finded = false;
 		max_neg = 1;
@@ -118,6 +98,5 @@ function init () {
 		$('#expr').val(max_neg);
 
 	});
-
 
 }
